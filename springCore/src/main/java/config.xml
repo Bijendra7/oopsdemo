@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<bean class="com.wipro.velocity.springCore.Student" name="Student">
+		<property name="name" value="Bijendra" />
+	</bean>
+
+	<bean class="com.wipro.velocity.student.Student1" name="Student1">
+		<property name="firstName" value="Bijendra" />
+		<property name="lastName" value="Agrawal" />
+		<property name="fatherName" value="Rakesh Agrawal" />
+		<property name="rollNo" value="101" />
+		<property name="phoneNumber" value="9149082180" />
+	</bean>
+
+	<bean class="com.wipro.velocity.object.Address" name="Address">
+		<property name="city" value="Mathura" />
+		<property name="state" value="Uttar-Pradesh" />
+		<property name="country" value="India" />
+	</bean>
+
+	<bean class="com.wipro.velocity.object.Student" name="Student2">
+		<property name="firstName" value="Bijendra" />
+		<property name="lastName" value="Agrawal" />
+		<property name="rollnumber" value="1806510017" />
+		<property name="address" ref="Address" />
+	</bean>
+
+	<bean class="com.wipro.velocity.collection.studentList"
+		name="collection">
+		<property name="studentName">
+			<list>
+				<value>Bijendra</value>
+				<value>Prashant</value>
+				<value>Rohit</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean class="com.wipro.velocity.collection.studentMap" 
+	name="map">
+		<property name="student">
+			<map>
+				<entry key="firstName" value="Bijendra" />
+				<entry key="lastName" value="Agrawal" />
+				<entry key="middleName" value="Bansal" />
+			</map>
+		</property>
+	</bean>
+
+	<bean class="com.wipro.velocity.collection.studentSet" name="set">
+		<property name="set">
+			<set>
+				<value>Bijendra</value>
+				<value>Prashant</value>
+				<value>Amit</value>
+				<value>Prakash</value>
+				<value>Mohit</value>
+				<value>Rahul</value>
+				<value>Rohit</value>
+				<value>Bhashkar</value>
+				<value>Bhopal</value>
+				<value>Bhiuvneshwar</value>
+			</set>
+		</property>
+	</bean>
+	
+	<bean class="com.wipro.velocity.constructor.studentConstructor" name="constructor">
+	<constructor-arg value="Bijendra" />
+	<constructor-arg value="B.tech" />
+	<constructor-arg value="B.S.A collage of engineering and technology" />
+	</bean>
+	
+</beans>
